@@ -16,7 +16,7 @@ async function main(){
         const resp = await client.chat.postMessage(params);
         console.log(resp);
     }catch(e){
-
+        console.log(e);
     }
 }
 main();
