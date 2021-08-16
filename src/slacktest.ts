@@ -4,7 +4,7 @@ import { WebClient } from '@slack/web-api';
 
 async function main(){
     try{
-        const token = 'xoxb-1977008656005-1986620500100-tJ2azu3RtPj1dGNSO06eaIsV';
+        const token = process.env.SLACK_BOT_ENV;
         const channel = '#test';
         const message = 'Hello, world! at TypeScript';
 
