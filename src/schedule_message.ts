@@ -14,8 +14,8 @@ async function message(){
         const client = new WebClient(token);
         
         const result = await client.chat.scheduleMessage({
-            channel: '#test',
-            text: 'test message',
+            channel: channel,
+            text: message,
             post_at: postAt
         });
         console.log(result);
