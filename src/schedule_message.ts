@@ -4,11 +4,11 @@ async function message(){
     try{
         const token = process.env.SLACK_BOT_TOKEN;
         const channel = '#test';
-        const message = 'test message';
+        const message = '昼飯だ！';
 
         const date = new Date();
         date.setDate(date.getDate()+1);
-        date.setHours(10,0,0);
+        date.setHours(13,0,0);
         const postAt = Number.parseInt("" + date.getTime()/1000);
 
         const client = new WebClient(token);
