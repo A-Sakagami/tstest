@@ -37,35 +37,37 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var web_api_1 = require("@slack/web-api");
-// import { Webhook } from '@slack/webhook';
-// import { rtm } from '@slack/rtm-api';
-function main() {
+function message() {
     return __awaiter(this, void 0, void 0, function () {
-        var token, channel, message, client, params, resp, e_1;
+        var token, channel, message_1, date, postAt, client, result, e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
                     token = process.env.SLACK_BOT_TOKEN;
                     channel = '#test';
-                    message = 'Hello, world! at TypeScript';
+                    message_1 = '昼飯だ！';
+                    date = new Date();
+                    date.setDate(date.getDate() + 1);
+                    date.setHours(13, 0, 0);
+                    postAt = Number.parseInt("" + date.getTime() / 1000);
                     client = new web_api_1.WebClient(token);
-                    params = {
-                        channel: channel,
-                        text: message
-                    };
-                    return [4 /*yield*/, client.chat.postMessage(params)];
+                    return [4 /*yield*/, client.chat.scheduleMessage({
+                            channel: channel,
+                            text: message_1,
+                            post_at: postAt
+                        })];
                 case 1:
-                    resp = _a.sent();
-                    console.log(resp);
+                    result = _a.sent();
+                    console.log(result);
                     return [3 /*break*/, 3];
                 case 2:
                     e_1 = _a.sent();
-                    console.log(e_1);
+                    console.error(e_1);
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
         });
     });
 }
-main();
+message();
