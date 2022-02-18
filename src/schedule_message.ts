@@ -2,7 +2,7 @@ import { WebClient } from "@slack/web-api";
 
 async function message(){
     try{
-        const token = process.env.SLACK_BOT_TOKEN;
+        //const token = process.env.SLACK_BOT_TOKEN;
         const channel = '#test';
         const message = '昼飯だ！';
 
