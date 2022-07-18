@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="wrapper.css">
-    <script src="./dist/hello.js"></script>
-    <script src="./dist/euc.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -28,9 +26,12 @@
     </div>
     <div id="number">
         <label>数を入力してください。</label>
-        <input type="text", value="数1：",name="num1",required pattern="[0-9]" />
-        <input type="text", value="数2：",name="num2",required pattern="[0-9]" />
+        <input type="text",name="num1",required pattern="[0-9]" />
+        <input type="text",name="num2",required pattern="[0-9]" />
         <input type="submit", value="最大公約数" onclick=euc(num1,num2)></input>
+
+        <script src="./dist/hello.js"></script>
+        <script src="./dist/euc.js"></script>
     </div>
 </body>
 </html>
