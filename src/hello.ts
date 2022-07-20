@@ -1,19 +1,9 @@
+import {User} from "./User";
+
 function hello() {
     console.log("hello");
 }
 hello();
-
-//人オブジェクト
-class User {
-    public age: number;
-    public familyName: string;
-    public givenName: string;
-    constructor (familyName: string, givenName: string, age: number) {
-        this.age = age;
-        this.familyName = familyName;
-        this.givenName = givenName;
-    }
-}
 
 const user = new User("taro", "uamada", 29); // 名前と年齢は適当に
 
