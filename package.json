@@ -4,7 +4,7 @@
   "private": "true",
   "main": "src/hello.js",
   "dependencies": {
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "axios": "^1.6.8"
   },
   "devDependencies": {
