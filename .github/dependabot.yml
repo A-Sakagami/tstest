@@ -15,7 +15,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    target:
+    pull_request_target:
       branch: "branch1"
 
   # Maintain dependencies for Composer
@@ -23,3 +23,5 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+
+  
