@@ -1,8 +1,5 @@
 # Basic set up for three package managers
 version: 2
-
-pull_request_target:
-  branch: "branch1"
 updates:
 
   # Maintain dependencies for GitHub Actions
