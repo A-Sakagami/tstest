@@ -1,6 +1,6 @@
 # Basic set up for three package managers
-
 version: 2
+
 pull_request_target:
   branch: "branch1"
 updates:
@@ -17,7 +17,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
 
   # Maintain dependencies for Composer
   - package-ecosystem: "composer"
