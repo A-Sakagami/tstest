@@ -20,5 +20,5 @@ jobs:
           git config user.email 'Akiyasu.Sakagami@gmail.com'
           git fetch origin branch1
           git checkout branch1
-          git merge origin/main
+          git merge origin/main ‐-allow-unrelated-histories
           git push origin branch1
