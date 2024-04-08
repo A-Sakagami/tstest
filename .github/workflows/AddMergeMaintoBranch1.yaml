@@ -17,8 +17,8 @@ jobs:
 
       - name: Merge main to branch1
         run: |
-          git config --global user.name 'A-Sakagami'
-          git config --global user.email 'Akiyasu.Sakagami@gmail.com'
+          git config user.name 'A-Sakagami'
+          git config user.email 'Akiyasu.Sakagami@gmail.com'
           git fetch origin branch1
           git checkout branch1
           git merge origin/main
