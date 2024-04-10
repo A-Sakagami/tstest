@@ -3,6 +3,9 @@
 function euc(num1, num2) {
     const resultElement = document.getElementById('result');
     const errorElement = document.getElementById('error');
+    // resultとerrorの内容をクリア。ボタンを押すたびにリセットされる。
+    resultElement.textContent = '';
+    errorElement.textContent = '';
     //エラーハンドリング　正規表現で数字以外入力時にerrorコンテナに結果を送る
     if (!num1.match(/^\d+$/) || !num2.match(/^\d+$/)) {
         errorElement.textContent = 'エラー：数値を入力してください。';

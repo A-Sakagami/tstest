@@ -74,5 +74,9 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  }
 }
