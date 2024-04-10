@@ -20,18 +20,21 @@
         <p>this is shadow test.</p> 
     </div>
     <div id="contents">
-        <p class="firstName", type="textbox">姓</p>
-        <p class="givenName", type="textbox">名</p>
-        <p class="number", type="textbox">年齢</p>
+        <label for="firstName">姓：</label>
+        <input class="firstName" type="textbox" /><br>
+        <label for="givenName">名：</label>
+        <input class="givenName" type="textbox" /><br>
+        <label for="number">年齢：</label>
+        <input class="number" type="textbox" />
     </div>
     <div id="number">
         <label>数を入力してください。</label>
-        <input type="text",name="num1",required pattern="[0-9]" />
-        <input type="text",name="num2",required pattern="[0-9]" />
-        <input type="submit", value="最大公約数" onclick=euc(num1,num2)></input>
-
-        <script src="./dist/hello.js"></script>
-        <script src="./dist/euc.js"></script>
+        <input type="text" name="num1" required pattern="[0-9]+" />
+        <input type="text" name="num2" required pattern="[0-9]+" />
+        <input type="button" value="最大公約数" onclick="euc(document.getElementById('num1').value, document.getElementById('num2').value)"></input><br>
+        <div id="result" style="color:teal"></div>
+        <div id="error" style="color: red;"></div>
     </div>
+    <script src="./dist/euc.js"></script>
 </body>
 </html>
