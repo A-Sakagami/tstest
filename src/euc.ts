@@ -1,20 +1,33 @@
-//const contentsNumber = document.getElementById('number');
+//最大公約数・ユークリッドの互除法。
+function euc(num1:string,num2:string) :void{
 
-function euc(num1:number,num2:number) {
-    let n = num1;
-    let m = num2;
+    const resultElement = document.getElementById('result') as HTMLElement;
+    const errorElement = document.getElementById('error') as HTMLElement;
+
+    // resultとerrorの内容をクリア。ボタンを押すたびにリセットされる。
+    resultElement.textContent = '';
+    errorElement.textContent = '';
+
+    //エラーハンドリング　正規表現で数字以外入力時にerrorコンテナに結果を送る
+    if (!num1.match(/^\d+$/) || !num2.match(/^\d+$/)) {
+        errorElement.textContent = 'エラー：数値を入力してください。';
+        return;
+    }
+
+    let n :number = parseInt(num1,10)
+    let m :number = parseInt(num2,10)
+
     if (n <= m) {
         let exchange = m;
-        n = m;
-        m = exchange;
+        m = n;
+        n = exchange;
     }
+        
     let mod : number;
     while (m > 0) {
         mod = n % m;
         n = m;
         m = mod;
     }
-    return `${num1}と${num2}の最大公約数は${n}です。`;
+    resultElement.textContent = `${num1}と${num2}の最大公約数は${n}です。`;
 }
-
-console.log(euc(36,16));
