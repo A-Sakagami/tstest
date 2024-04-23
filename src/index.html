@@ -2,39 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="wrapper.css">
-    <title>Document</title>
+    <title>Seat Reservation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="one">One</div>
-        <div class="two">Two</div>
-        <div class="three">Three</div>
-        <div class="four">Four</div>
-        <div class="five">Five</div>
-        <div class="six">Six</div>
+    <div class="container">
+        <div class="seat" data-status="available">1A</div>
+        <div class="seat" data-status="booked">1B</div>
+        <!-- 略 -->
     </div>
-    <div class="shadow">
-        <p>this is shadow test.</p> 
-    </div>
-    <div id="contents">
-        <label for="firstName">姓：</label>
-        <input class="firstName" type="textbox" /><br>
-        <label for="givenName">名：</label>
-        <input class="givenName" type="textbox" /><br>
-        <label for="number">年齢：</label>
-        <input class="number" type="textbox" />
-    </div>
-    <div id="number">
-        <label>数を入力してください。</label>
-        <input type="text" id="num1" name="num1" required pattern="[0-9]+" />
-        <input type="text" id="num2" name="num2" required pattern="[0-9]+" />
-        <input type="button" value="最大公約数" onclick="euc(document.getElementById('num1').value, document.getElementById('num2').value)"></input><br>
-        <div id="result" style="color:teal"></div>
-        <div id="error" style="color: red;"></div>
-    </div>
-    <script src="./dist/euc.js"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+/* style.css */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列のグリッド */
+  gap: 10px;
+}
+
+.seat {
+  padding: 20px;
+  text-align: center;
+  background-color: #4CAF50; /* 空席は緑色 */
+  color: white;
+  cursor: pointer;
+}
+
+.seat[data-status="booked"] {
+  background-color: #F44336; /* 予約済みは赤色 */
+}
+
+.seat:hover {
+  background-color: #555; /* ホバー効果 */
+}
