@@ -1,20 +1,84 @@
 /* style.css */
+header {
+  display: flex;
+  font: 100% Arial, bold;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+#header-logo {
+  position: relative;
+  height: 50px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
 .seating-chart {
   display: grid;
-  grid-template-columns: repeat(5, 50px); /* 5列 */
+  grid-template-columns: repeat(5, 100px); /* 5列 */
   grid-gap: 10px;
+  border: 0.5rem solid black;
+  padding: 10px;
 }
 
 .seat {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background-color: #4CAF50;
   color: white;
   text-align: center;
-  line-height: 50px;
+  font: bolder;
+  font-size: large;
+  line-height: 100px;
   cursor: pointer;
+  overflow: auto;
 }
 
 .seat.selected {
   background-color: #FF9800; /* 選択された座席の色 */
+}
+
+.seat:hover{
+  background-color: #FF9800;
+}
+
+footer {
+  display: flex;
+  font: 100% Arial, bold;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+ <!--
+    Copyright (c) 2024 by @A-Sakagami, GENZ.inc
+    All rights reserved.
+-->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -6,21 +10,39 @@
     <title>座席予約システム</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<header class="header">
+    <a href="https://www.genz.jp/">
+        <img src="GENZ_logo.svg" alt="Company Logo" id="header-logo" />
+    </a>
+    <h1>座席予約システム</h1>
+    <nav>
+        <ul>
+            <li><a href="#home",>Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-    <!--
-    Copyright (c) 2024 by A-Sakagami, GENZ.inc
-    All rights reserved.
-    このウェブサイトの内容、コードの無断複写、再配布は禁じられています。
-    -->
     <div class="seating-chart">
         <div class="seat" data-seat="1A" onclick="selectSeat('1')">1</div>
         <div class="seat" data-seat="1B" onclick="selectSeat('2')">2</div>
         <div class="seat" data-seat="1C" onclick="selectSeat('3')">3</div>
-        <!-- その他の座席要素 -->
+        <div class="seat" data-seat="1D" onclick="selectSeat('4')">4</div>
+        <div class="seat" data-seat="1E" onclick="selectSeat('5')">5</div>
+        <div class="seat" data-seat="1F" onclick="selectSeat('6')">6</div>
+        <div class="seat" data-seat="1G" onclick="selectSeat('7')">7</div>
+        <div class="seat" data-seat="1H" onclick="selectSeat('8')">8</div>
+        <div class="seat" data-seat="1I" onclick="selectSeat('9')">9</div>
+        <div class="seat" data-seat="1J" onclick="selectSeat('10')">10</div>
+        <div class="seat" data-seat="1K" onclick="selectSeat('11')">11</div>
+        <div class="seat" data-seat="1L" onclick="selectSeat('12')">12</div>
+        <div class="seat" data-seat="1M" onclick="selectSeat('13')">13</div>
     </div>
 </body>
 <footer>
-    <p>&copy; <span id="year"></span> by GENZ.inc All rights reserved.</p>
+    <p>&copy; 2020~<span id="year"></span> by GENZ.inc All rights reserved.</p>
 </footer>
 <script>
     //JavaScriptでの現在の年の取得
