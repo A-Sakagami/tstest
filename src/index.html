@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--
+    Copyright (c) 2024 by 
+    All rights reserved.
+    このウェブサイトの内容、コードの無断複写、再配布は禁じられています。
+    -->
     <div class="container">
         <div class="seat" data-status="available">1A</div>
         <div class="seat" data-status="booked">1B</div>
@@ -14,6 +19,9 @@
     </div>
 </body>
 <footer>
-    <p>&copy; 2024 GENZ.inc. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> by GENZ.inc. All rights reserved.</p>
 </footer>
-</html>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<html>
