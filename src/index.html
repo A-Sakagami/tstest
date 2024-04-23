@@ -12,17 +12,21 @@
     All rights reserved.
     このウェブサイトの内容、コードの無断複写、再配布は禁じられています。
     -->
-    <div class="container">
-        <div class="seat" data-status="available">1A</div>
-        <div class="seat" data-status="booked">1B</div>
-        <!-- 略 -->
+    <div class="seating-chart">
+        <div class="seat" data-seat="1A" onclick="selectSeat('1')">1</div>
+        <div class="seat" data-seat="1B" onclick="selectSeat('2')">2</div>
+        <div class="seat" data-seat="1C" onclick="selectSeat('3')">3</div>
+        <!-- その他の座席要素 -->
     </div>
 </body>
 <footer>
-    <p>&copy; <span id="year"></span> by GENZ.inc. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> by GENZ.inc All rights reserved.</p>
 </footer>
 <script>
     //JavaScriptでの現在の年の取得
     document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src = "script.js">
+    //座席クリック時のスクリプト
 </script>
 <html>
