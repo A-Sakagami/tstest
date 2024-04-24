@@ -1,10 +1,11 @@
 /* style.css */
+/* header */
 header {
   display: flex;
   font: 100% Arial, bold;
   position: relative;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;     /* 垂直方向の中央揃え */
   padding: 10px 50px;
   background-color: #f8f8f8;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -41,23 +42,29 @@ nav ul li a {
 nav ul li a:hover {
   color: #007BFF;
 }
+/* headerここまで */
 
+/* body */
+body h1{
+  font-size: 30px;
+  margin-left: 10px;
+}
 .seating-chart {
   display: grid;
-  grid-template-columns: repeat(5, 100px); /* 5列 */
-  grid-gap: 10px;
-  border: 0.5rem solid black;
+  grid-template-columns: repeat(10, 100px); /* 5列 */
+  gap: 10px;
+  border: 0.5rem solid silver;
   padding: 10px;
 }
 
 .seat {
   width: 100px;
   height: 100px;
-  background-color: #4CAF50;
+  background-color: green;
   color: white;
   text-align: center;
   font: bolder;
-  font-size: large;
+  font-size: x-large;
   line-height: 100px;
   cursor: pointer;
   overflow: auto;
@@ -71,6 +78,59 @@ nav ul li a:hover {
   background-color: #FF9800;
 }
 
+/* モーダルの背景 */
+.modal {
+  display: none; /* デフォルトでは非表示 */
+  position: fixed; /* 画面中央に固定 */
+  z-index: 1; /* コンテンツの上に表示 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 全幅 */
+  height: 100%; /* 全高 */
+  overflow: auto; /* スクロール可能 */
+  background-color: rgb(0,0,0); /* 背景色 */
+  background-color: rgba(0,0,0,0.4); /* 黒色の半透明 */
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% 上部からマージンをとって中央揃え */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* コンテンツの幅 */
+}
+
+/* ボタンスタイル */
+#confirmBtn {
+  background-color: #4CAF50; /* 緑色 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* クローズボタン */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* bodyここまで */
+
+/* footer */
 footer {
   display: flex;
   font: 100% Arial, bold;
