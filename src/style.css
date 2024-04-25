@@ -1,0 +1,190 @@
+/* style.css */
+/* header */
+header {
+  display: flex;
+  font: 100% Arial, bold;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;     /* 垂直方向の中央揃え */
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+#header-logo {
+  position: relative;
+  height: 50px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+/* headerここまで */
+
+/* body */
+body h1{
+  font-size: 30px;
+  margin-left: 10px;
+}
+.seating-chart {
+  display: grid;
+  grid-template-columns: repeat(10, 100px); /* 5列 */
+  gap: 10px;
+  border: 0.5rem solid silver;
+  padding: 10px;
+}
+
+.seat {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  font: bolder;
+  font-size: x-large;
+  line-height: 100px;
+  cursor: pointer;
+  overflow: auto;
+}
+
+.seat.selected {
+  background-color: #FF9800; /* 選択された座席の色 */
+}
+
+.seat:hover{
+  background-color: #FF9800;
+}
+
+/* モーダルの背景 */
+.modal {
+  display: none; /* デフォルトでは非表示 */
+  position: fixed; /* 画面中央に固定 */
+  z-index: 1; /* コンテンツの上に表示 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 全幅 */
+  height: 100%; /* 全高 */
+  overflow: auto; /* スクロール可能 */
+  background-color: rgba(0,0,0,0.4); /* 黒色の半透明 */
+}
+
+/* モーダルコンテンツ */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 上部からマージンをとって中央揃え */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* コンテンツの幅 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 左揃え */
+}
+
+/* モーダルヘッダーコンテナ */
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+/* モーダルタイトル */
+#modalTitle {
+  text-align: center;
+  width: 100%;
+  margin-right: auto;
+  margin-bottom: 20px; /* タイトル下のスペース */
+}
+
+/* クローズボタンのスタイリング */
+.modal-header .close {
+  color: #aaa; /* ボタンの色 */
+  float: right; /* 右にフロート */
+  font-size: 28px; /* フォントサイズ */
+  font-weight: bold; /* フォントの太さ */
+  padding: 0 15px; /* 余白 */
+}
+
+/* ホバーとフォーカスのスタイルを追加 */
+.modal-header .close:hover,
+.modal-header .close:focus {
+  color: #000; /* ホバー時の色 */
+  text-decoration: none; /* テキストの下線を無くす */
+  cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+
+/* モーダルのテキスト */
+#modalText {
+  flex: 1; /* 残りのスペースを埋める */
+  padding-right: 20px; /* 右にスペースを作る */
+}
+
+/* モーダルボタンコンテナ */
+.modal-buttons {
+  margin-top: auto; /* コンテンツの最下部に配置 */
+  align-self: flex-end; /* 右揃え */
+}
+
+/* OKボタンスタイル */
+#confirmBtn {
+  align-items: flex-end;
+  background-color: #4CAF50; /* 緑色 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 10px; /* ボタン間のマージン */
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* キャンセルボタンスタイル */
+#cancelBtn {
+  align-items: flex-end;
+  background-color: grey; /* 灰色 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 10px; /* ボタン間のマージン */
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+/* bodyここまで */
+
+/* footer */
+footer {
+  display: flex;
+  font: 100% Arial, bold;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
