@@ -1,6 +1,6 @@
 // script.js
 // イベントリスナー
-import { ModalManager } from "./modal";
+import { ModalManager } from "./modal.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const seats = document.querySelectorAll<HTMLDivElement>('div[data-seat]'); // 座席を表すdivコンテナをすべて選択
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 座席を予約する
-function reserveSeat(seatNumber:string): void {
+export function reserveSeat(seatNumber:string): void {
     const banner = document.getElementById(`banner`);
     if(banner){
         banner.innerHTML = `
@@ -30,14 +30,6 @@ function reserveSeat(seatNumber:string): void {
             <button onclick="hideBanner()">OK</button>
         `;
         banner.style.display = "block";
-    }
-}
-
-//バナー表示を消す
-function hideBanner(){
-    const banner = document.getElementById(`banner`);
-    if(banner){
-        banner.style.display = "none";
     }
 }
 

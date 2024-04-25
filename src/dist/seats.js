@@ -1,11 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // script.js
 // イベントリスナー
-const modal_1 = require("./modal");
+import { ModalManager } from "./modal.js";
 document.addEventListener('DOMContentLoaded', () => {
     const seats = document.querySelectorAll('div[data-seat]'); // 座席を表すdivコンテナをすべて選択
-    const modalManager = new modal_1.ModalManager(); // モーダル管理クラスのインスタンス化
+    const modalManager = new ModalManager(); // モーダル管理クラスのインスタンス化
     // 座席をクリックしたら、選択式ポップアップを出す。
     seats.forEach(seat => {
         seat.addEventListener('click', function () {
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 // 座席を予約する
-function reserveSeat(seatNumber) {
+export function reserveSeat(seatNumber) {
     const banner = document.getElementById(`banner`);
     if (banner) {
         banner.innerHTML = `
@@ -27,13 +25,6 @@ function reserveSeat(seatNumber) {
             <button onclick="hideBanner()">OK</button>
         `;
         banner.style.display = "block";
-    }
-}
-//バナー表示を消す
-function hideBanner() {
-    const banner = document.getElementById(`banner`);
-    if (banner) {
-        banner.style.display = "none";
     }
 }
 // 座席の予約を取り消す

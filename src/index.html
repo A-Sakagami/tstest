@@ -40,17 +40,23 @@
         <div class="seat" data-seat="11">11</div>
         <div class="seat" data-seat="12">12</div>
         <div class="seat" data-seat="13">13</div>
+        <div class="seat" data-seat="14">14</div>
+        <div class="seat" data-seat="15">15</div>
     </div>
     <!-- カスタムモーダルのHTML -->
     <div id="confirmModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="modalText">選択した座席を予約しますか？</p>
-            <button id="confirmBtn">はい</button>
-            <button id="cancelBtn">キャンセル</button>
+            <div class="modal-header">
+                <span id="modalTitle">予約の確認</span>
+                <span class="close">&times;</span>
+            </div>
+            <p id="modalText"></p>
+            <div class="modal-button">
+                <button id="confirmBtn">はい</button>
+                <button id="cancelBtn">キャンセル</button>
+            </div>
         </div>
     </div>
-  
 </body>
 <footer>
     <p>&copy; 2020~<span id="year"></span> by GENZ.inc All rights reserved.</p>
@@ -59,10 +65,10 @@
     //JavaScriptでの現在の年の取得
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-<script src = "dist/seats.js">
+<script type="module" src = "dist/seats.js">
     //座席クリック時のスクリプト
 </script>
-<script src = "dist/modal.js">
+<script type="module" src = "dist/modal.js">
     //独自モーダルのスクリプト
 </script>
 <html>

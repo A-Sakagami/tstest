@@ -1,8 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModalManager = void 0;
-// modal.ts
-class ModalManager {
+// modal.js
+// 独自のモーダル設定
+import { reserveSeat } from "./seats.js";
+export class ModalManager {
     constructor() {
         this.modal = document.getElementById('confirmModal');
         this.modalText = document.getElementById('modalText');
@@ -12,23 +11,33 @@ class ModalManager {
         this.setupListeners();
     }
     setupListeners() {
-        // Confirm button listener
+        // OKボタンのリスナー
         this.confirmBtn.addEventListener('click', () => {
+            const seatNumber = this.modal.getAttribute('data-seat');
+            // Nullチェックで型安全を保証する
+            if (seatNumber) {
+                this.confirmReservation(seatNumber);
+            }
+            else {
+                console.error('座席番号が不正です。');
+            }
             this.hideModal();
-            // Additional logic for confirming the reservation can be added here
         });
-        // Cancel and close button listener
+        // ×ボタン、キャンセルボタンで何もせず閉じる
         this.cancelBtn.addEventListener('click', () => this.hideModal());
         this.closeSpan.addEventListener('click', () => this.hideModal());
-        // Hide modal when clicking outside of it
+        // モーダル外クリックで何もせず閉じる
         window.addEventListener('click', (event) => {
             if (event.target === this.modal) {
                 this.hideModal();
             }
         });
     }
+    confirmReservation(seatNumber) {
+        reserveSeat(seatNumber); // ここで外部の関数を呼び出す
+    }
     showModal(seatNumber) {
-        this.modalText.textContent = `Do you want to reserve seat ${seatNumber}?`;
+        this.modalText.textContent = ` ${seatNumber} 番の座席を予約しますか?`;
         this.modal.style.display = 'block';
         this.modal.setAttribute('data-current-seat', seatNumber);
     }
@@ -36,5 +45,4 @@ class ModalManager {
         this.modal.style.display = 'none';
     }
 }
-exports.ModalManager = ModalManager;
 //# sourceMappingURL=modal.js.map
