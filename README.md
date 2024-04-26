@@ -19,6 +19,9 @@
 #### 開発環境
 <img src="https://img.shields.io/badge/-vscode-000000.svg?logo=visualstudiocode&style=for-the-badge"></img>
 
+### プロジェクト内容
+現在フォームによって管理している座席予約システムを、モダンで視覚的・直感的に操作しやすいWebAppモデルとして実装する。
+
 ### 機能
 #### index.html
 トップページとなります。このページのボタン操作で座席予約・予約取り消し・予約状況確認を行えます。
