@@ -23,7 +23,7 @@
 <img src="https://img.shields.io/badge/-vscode-000000.svg?logo=visualstudiocode&style=for-the-badge"></img>
 
 ## プロジェクト内容
-現在フォームによって管理している座席予約システムを、モダンで視覚的・直感的に操作しやすいWebAppモデルとして実装する。<br>
+何かと管理に苦労する座席予約システムを、モダンで視覚的・直感的に操作しやすいWebAppモデルとして実装する。<br>
 管理者が状況を管理しやすいような環境を、プログラムの力で整える<br>
 
 ## 機能
