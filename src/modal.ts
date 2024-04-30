@@ -54,15 +54,16 @@ export class ModalManager {
     public confirmReservation(seatNumber: string): void {
         const banner = document.querySelector(`[data-seat='${seatNumber}']`) as HTMLElement;
         const message = document.getElementById('reservation-message') as HTMLElement;
-        if(banner){
-            message.innerHTML = `<p>${seatNumber}番の席を予約しました。</p>`;
+        if (banner && message) {
+            message.innerHTML = `${seatNumber}番の席を予約しました。`;
             banner.style.display = "block";
+    
+            // クローズボタンにイベントリスナーを追加
+            const closeButton = document.querySelector('.close-btn') as HTMLElement;
+            closeButton.addEventListener('click', () => {
+                banner.style.display = "none";
+            });
         }
-        // クローズボタンにイベントリスナーを追加
-        const closeButton = document.querySelector('.close-btn') as HTMLElement;
-        closeButton.addEventListener('click', () => {
-            banner.style.display = "none";
-        });
     }
 
     // モーダルを閉じる
