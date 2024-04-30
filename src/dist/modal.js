@@ -1,6 +1,5 @@
 // modal.js
 // 独自のモーダル設定
-import { reserveSeat } from "./seats.js";
 export class ModalManager {
     constructor() {
         this.modal = document.getElementById('confirmModal');
@@ -20,8 +19,8 @@ export class ModalManager {
             }
             else {
                 console.error('座席番号が不正です。');
+                this.hideModal();
             }
-            this.hideModal();
         });
         // ×ボタン、キャンセルボタンで何もせず閉じる
         this.cancelBtn.addEventListener('click', () => this.hideModal());
@@ -33,14 +32,24 @@ export class ModalManager {
             }
         });
     }
-    confirmReservation(seatNumber) {
-        reserveSeat(seatNumber); // ここで外部の関数を呼び出す
-    }
+    // モーダル表示
     showModal(seatNumber) {
         this.modalText.textContent = ` ${seatNumber} 番の座席を予約しますか?`;
         this.modal.style.display = 'block';
-        this.modal.setAttribute('data-current-seat', seatNumber);
+        this.modal.setAttribute('data-seat', seatNumber);
     }
+    // 座席を予約する
+    confirmReservation(seatNumber) {
+        const banner = document.getElementById(`data-seat`);
+        if (banner) {
+            banner.innerHTML = `
+                <p>${seatNumber}番の席を予約しました。</p>
+                <button onclick="hideBanner()">OK</button>
+            `;
+            banner.style.display = "block";
+        }
+    }
+    // モーダルを閉じる
     hideModal() {
         this.modal.style.display = 'none';
     }
