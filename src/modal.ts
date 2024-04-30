@@ -52,7 +52,7 @@ export class ModalManager {
 
     // 座席を予約した後のバナー表示
     public confirmReservation(seatNumber: string): void {
-        const banner = document.querySelector(`[data-seat='${seatNumber}']`) as HTMLElement;
+        const banner = document.querySelector(`banner`) as HTMLElement;
         const message = document.getElementById('reservation-message') as HTMLElement;
         if (banner && message) {
             message.innerHTML = `${seatNumber}番の席を予約しました。`;
