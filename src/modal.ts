@@ -27,8 +27,8 @@ export class ModalManager {
                 this.confirmReservation(seatNumber);
             }else{
                 console.error('座席番号が不正です。');
-                this.hideModal();
             }
+            this.hideModal();
         });
 
         // ×ボタン、キャンセルボタンで何もせず閉じる
@@ -51,7 +51,7 @@ export class ModalManager {
     }
 
     // 座席を予約した後のバナー表示
-    public confirmReservation(seatNumber: string): void {
+    private confirmReservation(seatNumber: string): void {
         const banner = document.querySelector(`banner`) as HTMLElement;
         const message = document.getElementById('reservation-message') as HTMLElement;
         if (banner && message) {

@@ -19,8 +19,8 @@ export class ModalManager {
             }
             else {
                 console.error('座席番号が不正です。');
-                this.hideModal();
             }
+            this.hideModal();
         });
         // ×ボタン、キャンセルボタンで何もせず閉じる
         this.cancelBtn.addEventListener('click', () => this.hideModal());
@@ -38,15 +38,18 @@ export class ModalManager {
         this.modal.style.display = 'block';
         this.modal.setAttribute('data-seat', seatNumber);
     }
-    // 座席を予約する
+    // 座席を予約した後のバナー表示
     confirmReservation(seatNumber) {
-        const banner = document.getElementById(`data-seat`);
-        if (banner) {
-            banner.innerHTML = `
-                <p>${seatNumber}番の席を予約しました。</p>
-                <button onclick="hideBanner()">OK</button>
-            `;
+        const banner = document.querySelector(`banner`);
+        const message = document.getElementById('reservation-message');
+        if (banner && message) {
+            message.innerHTML = `${seatNumber}番の席を予約しました。`;
             banner.style.display = "block";
+            // クローズボタンにイベントリスナーを追加
+            const closeButton = document.querySelector('.close-btn');
+            closeButton.addEventListener('click', () => {
+                banner.style.display = "none";
+            });
         }
     }
     // モーダルを閉じる
