@@ -16,17 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-// 座席を予約する
-export function reserveSeat(seatNumber) {
-    const banner = document.getElementById(`banner`);
-    if (banner) {
-        banner.innerHTML = `
-            <p>${seatNumber}番の席を予約しました。</p>
-            <button onclick="hideBanner()">OK</button>
-        `;
-        banner.style.display = "block";
-    }
-}
 // 座席の予約を取り消す
 function resetReserveSeat(seatIdSet, employeeId) {
 }
