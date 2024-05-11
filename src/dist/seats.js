@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalManager = new ModalManager(); // モーダル管理クラスのインスタンス化
     // 座席をクリックしたら、選択式ポップアップを出す。
     seats.forEach(seat => {
-        seat.addEventListener('click', function () {
+        seat.addEventListener('click', () => {
             // 選択した座席
-            const seatNumber = this.getAttribute('data-seat');
+            const seatNumber = seat.getAttribute('data-seat');
             // ユーザーが予約するか確認するモーダルを表示する
             if (seatNumber) {
                 modalManager.showModal(seatNumber);

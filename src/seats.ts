@@ -3,14 +3,14 @@
 import { ModalManager } from "./modal.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const seats = document.querySelectorAll<HTMLDivElement>('div[data-seat]'); // 座席を表すdivコンテナをすべて選択
+    const seats = document.querySelectorAll('div[data-seat]'); // 座席を表すdivコンテナをすべて選択
     const modalManager = new ModalManager();  // モーダル管理クラスのインスタンス化
 
     // 座席をクリックしたら、選択式ポップアップを出す。
     seats.forEach(seat => {
-        seat.addEventListener('click', function() {
+        seat.addEventListener('click', () => {
             // 選択した座席
-            const seatNumber = this.getAttribute('data-seat');
+            const seatNumber = seat.getAttribute('data-seat');
             // ユーザーが予約するか確認するモーダルを表示する
             if(seatNumber){
                 modalManager.showModal(seatNumber);
