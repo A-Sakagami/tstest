@@ -24,6 +24,7 @@ export class ModalManager {
             const seatNumber = this.modal.getAttribute('data-seat');
             // Nullチェックで型安全を保証する
             if(seatNumber){
+                console.log("デバック用です。");
                 this.confirmReservation(seatNumber);
             }else{
                 console.error('座席番号が不正です。');
@@ -46,24 +47,24 @@ export class ModalManager {
      // モーダル表示
      public showModal(seatNumber: string): void {
         this.modalText.textContent = ` ${seatNumber} 番の座席を予約しますか?`;
-        this.modal.style.display = 'block';
         this.modal.setAttribute('data-seat', seatNumber);
+        this.modal.style.display = 'block';
     }
 
     // 座席を予約した後のバナー表示
     private confirmReservation(seatNumber: string): void {
-        const banner = document.querySelector(`banner`) as HTMLElement;
+        const banner = document.querySelector(`#banner`) as HTMLElement;
         const message = document.getElementById('reservation-message') as HTMLElement;
-        if (banner && message) {
-            message.innerHTML = `${seatNumber}番の席を予約しました。`;
-            banner.style.display = "block";
-    
-            // クローズボタンにイベントリスナーを追加
-            const closeButton = document.querySelector('.close-btn') as HTMLElement;
-            closeButton.addEventListener('click', () => {
-                banner.style.display = "none";
-            });
-        }
+        console.log("ここにたどり着いているかチェック");
+        message.innerHTML = `${seatNumber}番の席を予約しました。`;
+        banner.style.display = "block";
+
+        // クローズボタンにイベントリスナーを追加
+        const closeButton = document.querySelector('.close-btn') as HTMLElement;
+        closeButton.addEventListener('click', () => {
+            banner.style.display = "none";
+        });
+        
     }
 
     // モーダルを閉じる
