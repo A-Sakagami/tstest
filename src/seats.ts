@@ -17,15 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 予約取り消しリンクにイベントリスナー設置
+    const cancelReserveSeat = document.querySelector('a[href=#cancelreserve]');
+    cancelReserveSeat?.addEventListener('click', (event: Event) => {
+        event.preventDefault(); // 以下カスタムアクション実行のため、リンクのデフォルトアクションを防止する
+        resetReserveSeat();
+    });
 });
 
 
 // 座席の予約を取り消す
-function resetReserveSeat(seatIdSet:string[], employeeId:string){
+function resetReserveSeat(){
 
 }
 
 // 座席の予約状況を確認する
-function searchReserveSeat(seatIdSet:string[]){
+function searchReserveSeat(seatId:string){
 
 }
