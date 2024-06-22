@@ -15,7 +15,6 @@ export class ModalManager {
             const seatNumber = this.modal.getAttribute('data-seat');
             // Nullチェックで型安全を保証する
             if (seatNumber) {
-                console.log("デバック用です。");
                 this.confirmReservation(seatNumber);
             }
             else {
@@ -43,7 +42,6 @@ export class ModalManager {
     confirmReservation(seatNumber) {
         const banner = document.querySelector(`#banner`);
         const message = document.getElementById('reservation-message');
-        console.log("ここにたどり着いているかチェック");
         message.innerHTML = `${seatNumber}番の席を予約しました。`;
         banner.style.display = "block";
         // クローズボタンにイベントリスナーを追加
