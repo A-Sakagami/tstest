@@ -24,7 +24,6 @@ export class ModalManager {
             const seatNumber = this.modal.getAttribute('data-seat');
             // Nullチェックで型安全を保証する
             if(seatNumber){
-                console.log("デバック用です。");
                 this.confirmReservation(seatNumber);
             }else{
                 console.error('座席番号が不正です。');
@@ -55,7 +54,6 @@ export class ModalManager {
     private confirmReservation(seatNumber: string): void {
         const banner = document.querySelector(`#banner`) as HTMLElement;
         const message = document.getElementById('reservation-message') as HTMLElement;
-        console.log("ここにたどり着いているかチェック");
         message.innerHTML = `${seatNumber}番の席を予約しました。`;
         banner.style.display = "block";
 

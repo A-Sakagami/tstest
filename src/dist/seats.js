@@ -15,11 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // 予約取り消しリンクにイベントリスナー設置
+    const cancelReserveSeat = document.querySelector('a[href=#cancelreserve]');
+    cancelReserveSeat === null || cancelReserveSeat === void 0 ? void 0 : cancelReserveSeat.addEventListener('click', (event) => {
+        event.preventDefault(); // 以下カスタムアクション実行のため、リンクのデフォルトアクションを防止する
+        resetReserveSeat();
+    });
+    // 予約状況確認リンクにイベントリスナーを設定
+    const checkReservationLink = document.querySelector('a[href="#logout"]');
+    checkReservationLink === null || checkReservationLink === void 0 ? void 0 : checkReservationLink.addEventListener('click', (event) => {
+        event.preventDefault(); // リンクのデフォルトアクションを防止
+        logout(); // 予約状況確認関数を実行
+    });
 });
-// 座席の予約を取り消す
-function resetReserveSeat(seatIdSet, employeeId) {
+// 予約取り消し関数
+function resetReserveSeat() {
+    console.log("予約を取り消すかどうかのモーダルを出す");
 }
-// 座席の予約状況を確認する
-function searchReserveSeat(seatIdSet) {
+// ログアウト
+function logout() {
+    console.log("ログアウトして、login.htmlに遷移するか確認するモーダルを出す");
 }
 //# sourceMappingURL=seats.js.map
