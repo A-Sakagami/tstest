@@ -1,13 +1,22 @@
 /* ログインフォーム */
 /* body */
-body, html ,footer{
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html, body {
+    height: 100%; /* ブラウザの全高を使う */
+    margin: 0; /* 外余白をなくす */
+    padding: 0; /* 内余白もなくす */
+    display: flex; /* Flexboxを有効化 */
+    justify-content: center; /* 主軸（ここでは水平方向）の中央に配置 */
+    align-items: center; /* 交差軸（ここでは垂直方向）の中央に配置 */
+    flex-direction: column; /* 子要素を縦方向に並べる */
     background-color: #f4f4f4;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 内容を中央に配置 */
+    height: 100vh; /* 最小の高さをビューポートの100%に設定 */
+    margin: 0;
 }
 
 .login-form-container {
@@ -43,8 +52,21 @@ button:hover {
     margin-bottom: 20px;
 }
 
-body div h2 {
+.form-group h2 {
     text-align: center;
     color: #333;
     font-size: 24px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    font: 100% Arial, bold;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
