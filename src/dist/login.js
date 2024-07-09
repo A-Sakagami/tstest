@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const isValid = yield verifyCredentials(userId, password);
             if (isValid) {
-                window.location.href = 'index.html'; // 認証成功時のページ遷移
+                window.location.href = 'seats.html'; // 認証成功時のページ遷移
             }
             else {
                 alert('IDまたはパスワードが正しくありません。'); // 認証失敗時のアラート
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return __awaiter(this, void 0, void 0, function* () {
             // 本来はサーバーにリクエストを送り、認証を行います
             // 以下はダミーの実装です
-            return userId === 'expectedUserId' && password === 'expectedPassword';
+            return userId === 'hogehoge' && password === 'asdf1234';
         });
     }
 });
