@@ -7,71 +7,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>座席予約システム</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginstyle.css">
+    <title>login</title>
 </head>
-<header class="header">
-    <a href="https://www.google.com/">
-        <img src="text_yoyaku.png" alt="Company Logo" id="header-logo" />
-    </a>
-    <h1>座席予約システム</h1>
-    <nav>
-        <ul>
-            <li><a href="#cancelreserve",>予約取り消し</a></li>
-            <li><a href="#logout">ログアウト</a></li>
-        </ul>
-    </nav>
+<header>
+
 </header>
 <body>
-    <h1>座席表</h1>
-    <div class="seating-chart">
-        <div class="seat" data-seat="1">1</div>
-        <div class="seat" data-seat="2">2</div>
-        <div class="seat" data-seat="3">3</div>
-        <div class="seat" data-seat="4">4</div>
-        <div class="seat" data-seat="5">5</div>
-        <div class="seat" data-seat="6">6</div>
-        <div class="seat" data-seat="7">7</div>
-        <div class="seat" data-seat="8">8</div>
-        <div class="seat" data-seat="9">9</div>
-        <div class="seat" data-seat="10">10</div>
-        <div class="seat" data-seat="11">11</div>
-        <div class="seat" data-seat="12">12</div>
-        <div class="seat" data-seat="13">13</div>
-        <div class="seat" data-seat="14">14</div>
-        <div class="seat" data-seat="15">15</div>
-    </div>
-    <!-- カスタムモーダルのHTML -->
-    <div id="confirmModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="modalTitle">予約の確認</span>
-                <span class="close">&times;</span>
+    <div class="login-form-container">
+        <h2>ログイン</h2>
+        <!-- Update the action with your form submission endpoint -->
+        <form action="/submit-your-login-form" method="post">
+            <div class="form-group">
+                <label for="userId">ID:</label>
+                <input type="text" id="userId" name="userId" required>
             </div>
-            <p id="modalText"></p>
-            <div class="modal-button">
-                <button id="confirmBtn">はい</button>
-                <button id="cancelBtn">キャンセル</button>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
             </div>
-        </div>
-    </div>
-    <!-- 予約完了バナーのHTML -->
-    <div id="banner" style="display: none;">
-        <span id="reservation-message"></span>
-        <span class="close-btn">&times;</span>    
+            <button type="submit">Login</button>
+        </form>
     </div>
 </body>
 <footer>
     <p>&copy; 2020~<span id="year"></span> by GENZ.inc All rights reserved.</p>
 </footer>
-<script>
-    //JavaScriptでの現在の年の取得
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script type="module", src="dist/login.js">
+    //ログインボタンクリック時のスクリプト
 </script>
-<script type="module" src = "dist/seats.js">
-    //座席クリック時のスクリプト
-</script>
-<script type="module" src = "dist/modal.js">
-    //独自モーダルのスクリプト
-</script>
-<html>
+</html>
