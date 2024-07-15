@@ -11,7 +11,7 @@
     "@slack/rtm-api": "^7.0.0",
     "@slack/web-api": "^7.2.0",
     "@slack/webhook": "^7.0.2",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
