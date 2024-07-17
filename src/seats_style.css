@@ -50,24 +50,28 @@ body h1{
   margin-left: 10px;
 }
 .seating-chart {
-  display: grid;
-  grid-template-columns: repeat(10, 100px); /* 5列 */
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  border: 0.5rem solid silver;
-  padding: 10px;
 }
 
 .seat {
-  width: 100px;
-  height: 100px;
-  background-color: green;
-  color: white;
-  text-align: center;
-  font: bolder;
-  font-size: x-large;
-  line-height: 100px;
-  cursor: pointer;
-  overflow: auto;
+  box-sizing: border-box;
+  width: calc(50% - 20px); /* 2列にするために幅を50％とする */
+  padding: 5% 10%;
+  background-color: #a0d5ba; /* 予約前の席を柔らかな緑色に設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.seat::before{
+  content: attr(data-seat);
+  display: inline-block;
+  width: 30px; /* 番号の幅を固定 */
+  text-align: left; /* 番号を左寄せ */
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 .seat.selected {

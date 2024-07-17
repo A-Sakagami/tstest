@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const isValid = await verifyCredentials(userId, password);
         if (isValid) {
-          window.location.href = 'index.html'; // 認証成功時のページ遷移
+          window.location.href = 'seats.html'; // 認証成功時のページ遷移
         } else {
           alert('IDまたはパスワードが正しくありません。'); // 認証失敗時のアラート
         }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function verifyCredentials(userId: string, password: string): Promise<boolean> {
       // 本来はサーバーにリクエストを送り、認証を行います
       // 以下はダミーの実装です
-      return userId === 'expectedUserId' && password === 'expectedPassword';
+      return userId === 'hogehoge' && password === 'asdf1234';
     }
   });
   
