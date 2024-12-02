@@ -5,7 +5,7 @@
   "main": "src/hello.js",
   "dependencies": {
     "@types/node": "^22.9.0",
-    "axios": "^1.7.7"
+    "axios": "^1.7.8"
   },
   "devDependencies": {
     "@slack/rtm-api": "^7.0.1",
