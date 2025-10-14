@@ -4,18 +4,18 @@
   "private": "true",
   "main": "src/hello.js",
   "dependencies": {
-    "@types/node": "^24.2.1",
-    "axios": "^1.11.0"
+    "@types/node": "^24.7.2",
+    "axios": "^1.12.2"
   },
   "devDependencies": {
     "@slack/rtm-api": "^7.0.3",
-    "@slack/web-api": "^7.9.3",
+    "@slack/web-api": "^7.11.0",
     "@slack/webhook": "^7.0.5",
     "prettier": "^3.6.2",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2",
-    "webpack": "^5.98.0",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
   },
   "scripts": {
