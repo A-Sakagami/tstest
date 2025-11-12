@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@slack/rtm-api": "^7.0.3",
-    "@slack/web-api": "^7.11.0",
+    "@slack/web-api": "^7.12.0",
     "@slack/webhook": "^7.0.5",
     "prettier": "^3.6.2",
     "ts-loader": "^9.5.4",
